@@ -203,7 +203,7 @@ elif opcion == "🤖 Predicción IA":
     edad = st.slider("Edad", 18, 90, 30)
     sexo = st.selectbox("Sexo", [1, 0], format_func=lambda x: "Masculino" if x==1 else "Femenino")
     dolor = st.slider("Dolor (1–10)", 1, 10, 5)
-    caries = st.selectbox("Caries Previas", [1, 0])
+    caries = st.slider("Caries Previas", 0, 10, 0)
     visitas = st.number_input("Visitas Anuales", 0, 20, 2)
 
     if st.button("🔮 Predecir"):
@@ -228,3 +228,4 @@ elif opcion == "📂 Base de Datos":
     st.dataframe(df, use_container_width=True)
 
     st.download_button("📥 Descargar CSV", df.to_csv(index=False), "pacientes.csv")
+
